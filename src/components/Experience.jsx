@@ -1,10 +1,10 @@
-import { OrbitControls } from "@react-three/drei";
+ import { CameraControls } from "./CameraControls";
 import Woman from "./Woman";
 
 const Experience = () => {
   return (
-    <>
-      <OrbitControls />
+    <> 
+      <CameraControls />
       <ambientLight />
       <directionalLight
         position={[-5, 5, 5]}

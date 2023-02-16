@@ -13,8 +13,9 @@ const Interface = () => {
           {
             Object.keys(CameraModes).map((mode) => (
               <Button 
-                key={mode} variant={mode === cameraMode ? 'filled' : 'light'}
-                onClick={() => setCameraMode()}
+                key={mode} 
+                variant={mode === cameraMode ? 'filled' : 'light'}
+                onClick={() => setCameraMode(mode)}
             >
               {mode}
             </Button>
