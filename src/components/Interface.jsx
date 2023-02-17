@@ -1,6 +1,7 @@
 import { Affix, Button, Group, Stack } from "@mantine/core"
 import { useCharacterAnimations } from "../contexts/CharacterAnimations"
 import { CameraModes, useCharacterCustomization } from "../contexts/CharacterCustomizationContext"
+import { HeadConfigurator } from "./HeadConfigurator"
 
 const Interface = () => {
   const { animations, animationIndex, setAnimationIndex } = useCharacterAnimations()
@@ -8,7 +9,8 @@ const Interface = () => {
 
   return (
     <>
-      <Affix position={{ top: 50, right: 20 }}>
+      {/* CAMERA CONTROLS */}
+      <Affix position={{ top: 20, right: 20 }}>
         <Group>
           {
             Object.keys(CameraModes).map((mode) => (
@@ -23,6 +25,15 @@ const Interface = () => {
           }
         </Group>
       </Affix>
+
+      {/* COLORS CHANGES     */}
+      <Affix position={{ top: 50, right: 20 }}>
+        {
+          cameraMode === CameraModes.HEAD && <HeadConfigurator />
+        }
+      </Affix>
+
+      {/* ANIMATIONS */}
       <Affix position={{ bottom: 50, right: 20 }}>
         <Stack>
           {animations.map((animation, index) => (
